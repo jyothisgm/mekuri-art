@@ -131,7 +131,7 @@ export const HeaderSimple = ({ links }) => {
 	return (
 		<Header
 			height={HEADER_HEIGHT}
-			mb={120}
+			mb={40}
 			id='sticky-header'
 			className={`navbar${sticky.isSticky ? " sticky" : ""}`}
 			ref={headerRef}

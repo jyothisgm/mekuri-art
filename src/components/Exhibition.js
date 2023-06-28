@@ -50,30 +50,7 @@ const Card = ({ image, title, category }) => {
 	);
 };
 
-const data = [
-	{
-		image: "../events/E1.jpg",
-		title: "Nrithya Culture",
-		category: "Exhibition",
-	},
-	{
-		image: "../events/E1a.jpg",
-		title: "Nrithya Culture",
-		category: "Exhibition",
-	},
-	{
-		image: "../events/E2.jpg",
-		title: "Safar Collective",
-		category: "Exhibition",
-	},
-	{
-		image: "../events/E3.jpg",
-		title: "Nrithya Culture",
-		category: "Exhibition",
-	},
-];
-
-export function CardsCarousel() {
+export const CardsCarousel = ({ data }) => {
 	const theme = useMantineTheme();
 	const mobile = useMediaQuery(`(max-width: ${theme.breakpoints.sm})`);
 	const slides = data.map((item) => (
@@ -105,6 +82,6 @@ export function CardsCarousel() {
 			</Carousel>
 		</Container>
 	);
-}
+};
 
 export default CardsCarousel;

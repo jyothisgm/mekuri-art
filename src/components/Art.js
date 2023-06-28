@@ -69,50 +69,8 @@ const ImageCard = ({ image, title, link }) => {
 		</Card>
 	);
 };
-const data = [
-	{
-		image: "../Art/A1.jpg",
-		title: "",
-		link: "nature",
-	},
-	{
-		image: "../Art/A2.jpg",
-		title: "",
-		link: "beach",
-	},
-	{
-		image: "../Art/B1.jpg",
-		title: "",
-		link: "beach",
-	},
-	{
-		image: "../Art/B2.jpg",
-		title: "",
-		link: "beach",
-	},
-	{
-		image: "../Art/R1.jpg",
-		title: "",
-		link: "beach",
-	},
-	{
-		image: "../Art/R2.jpg",
-		title: "",
-		link: "beach",
-	},
-	{
-		image: "../Art/R3.jpg",
-		title: "",
-		link: "beach",
-	},
-	{
-		image: "../Art/R4.jpg",
-		title: "",
-		link: "beach",
-	},
-];
 
-const ArtGrid = () => {
+const ArtGrid = ({ data, title }) => {
 	const images = data.map((item) => (
 		<Grid.Col key={item.title} span={6} style={{ minHeight: rem(500) }}>
 			<ImageCard {...item} />
@@ -127,7 +85,7 @@ const ArtGrid = () => {
 				weight={900}
 				align='center'
 			>
-				Work
+				{title}
 			</Title>
 			<Grid>{images}</Grid>
 		</Container>

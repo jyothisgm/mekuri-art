@@ -11,6 +11,80 @@ const PRIMARY_COL_HEIGHT = rem(300);
 export const Home = () => {
 	const theme = useMantineTheme();
 	const SECONDARY_COL_HEIGHT = `calc(${PRIMARY_COL_HEIGHT} / 2 - ${theme.spacing.md} / 2)`;
+	const exhibition_data = [
+		{
+			image: "../events/E1.jpg",
+			title: "Nrithya Culture",
+			category: "Exhibition",
+		},
+		{
+			image: "../events/E1a.jpg",
+			title: "Nrithya Culture",
+			category: "Exhibition",
+		},
+		{
+			image: "../events/E2.jpg",
+			title: "Safar Collective",
+			category: "Exhibition",
+		},
+		{
+			image: "../events/E3.jpg",
+			title: "Nrithya Culture",
+			category: "Exhibition",
+		},
+	];
+	const work_data = [
+		{
+			image: "../Art/A1.jpg",
+			title: "",
+			link: "/Art/A1.jpg",
+		},
+		{
+			image: "../Art/A2.jpg",
+			title: "",
+			link: "/Art/A2.jpg",
+		},
+		{
+			image: "../Art/B1.jpg",
+			title: "",
+			link: "/Art/B1.jpg",
+		},
+		{
+			image: "../Art/B2.jpg",
+			title: "",
+			link: "/Art/B2.jpg",
+		},
+		{
+			image: "../Art/R1.jpg",
+			title: "",
+			link: "/Art/R1.jpg",
+		},
+		{
+			image: "../Art/R2.jpg",
+			title: "",
+			link: "/Art/R2.jpg",
+		},
+		{
+			image: "../Art/R3.jpg",
+			title: "",
+			link: "/Art/R3.jpg",
+		},
+		{
+			image: "../Art/R4.jpg",
+			title: "",
+			link: "/Art/R4.jpg",
+		},
+		{
+			image: "../Art/A3.jpg",
+			title: "",
+			link: "/Art/A3.jpg",
+		},
+		{
+			image: "../Art/A4.jpg",
+			title: "",
+			link: "/Art/A4.jpg",
+		},
+	];
 
 	return (
 		<Container>
@@ -44,18 +118,27 @@ export const Home = () => {
 						</Grid.Col>
 						<Grid.Col span={6}>
 							<Paper shadow='xs' p='md' height={SECONDARY_COL_HEIGHT} align='center'>
-								<Button color='red' radius='xs' size='lg'>
-									Say Hi
-								</Button>
+								<a href='/contactme'>
+									<Button color='red' radius='xs' size='lg'>
+										Say Hi
+									</Button>
+								</a>
 							</Paper>
 						</Grid.Col>
 					</Grid>
 				</Grid.Col>
 			</Grid>
 			<Divider my='xl' size={10} label='Exhibitions' labelPosition='center' />
-			<CardsCarousel />
+			<CardsCarousel data={exhibition_data} />
 			<Divider my='xl' size={10} label='Work' labelPosition='center' />
-			<ArtGrid />
+			<ArtGrid data={work_data} title='Work' />
+			<Paper shadow='xs' p='md' height={SECONDARY_COL_HEIGHT} align='center'>
+				<a href='/work'>
+					<Button color='red' radius='xs' size='lg'>
+						See More
+					</Button>
+				</a>
+			</Paper>
 			<Divider my='xs' size={10} label='Contact Me' labelPosition='center' />
 			<GetInTouchSimple />
 		</Container>

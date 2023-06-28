@@ -16,13 +16,6 @@ export const GetInTouchSimple = () => {
 			subject: (value) => value.trim().length === 0,
 		},
 	});
-	const social = [IconBrandTwitter, IconBrandYoutube, IconBrandInstagram];
-
-	const icons = social.map((Icon, index) => (
-		<ActionIcon key={index} size={28} variant='transparent'>
-			<Icon size='1.4rem' stroke={1.5} />
-		</ActionIcon>
-	));
 
 	return (
 		<Container>
@@ -37,7 +30,21 @@ export const GetInTouchSimple = () => {
 					Get in touch
 				</Title>
 				<Group mt='xl' align='center'>
-					{icons}
+					<a href='https://twitter.com/' target='_blank' rel='noreferrer'>
+						<ActionIcon key={1} size={28} variant='transparent'>
+							<IconBrandTwitter size='1.4rem' stroke={1.5} />
+						</ActionIcon>
+					</a>
+					<a href='https://youtube.com/' target='_blank' rel='noreferrer'>
+						<ActionIcon key={2} size={28} variant='transparent'>
+							<IconBrandYoutube size='1.4rem' stroke={1.5} />
+						</ActionIcon>
+					</a>
+					<a href='https://www.instagram.com/_mekuri/' target='_blank' rel='noreferrer'>
+						<ActionIcon key={3} size={28} variant='transparent'>
+							<IconBrandInstagram size='1.4rem' stroke={1.5} />
+						</ActionIcon>
+					</a>
 				</Group>
 				<SimpleGrid cols={2} mt='xl' breakpoints={[{ maxWidth: "sm", cols: 1 }]}>
 					<TextInput
