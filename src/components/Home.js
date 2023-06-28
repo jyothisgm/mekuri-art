@@ -1,6 +1,6 @@
 import { React } from "react";
 import { Container, Grid, useMantineTheme, Paper, rem } from "@mantine/core";
-import { Image, Text, Button, Divider, Title } from "@mantine/core";
+import { Image, Text, Button, Divider } from "@mantine/core";
 
 import ArtGrid from "./Art";
 import GetInTouchSimple from "./ContactMe";

@@ -71,42 +71,42 @@ const ImageCard = ({ image, title, link }) => {
 };
 const data = [
 	{
-		image: "../art/A1.jpg",
+		image: "../Art/A1.jpg",
 		title: "",
 		link: "nature",
 	},
 	{
-		image: "../art/A2.jpg",
+		image: "../Art/A2.jpg",
 		title: "",
 		link: "beach",
 	},
 	{
-		image: "../art/B1.jpg",
+		image: "../Art/B1.jpg",
 		title: "",
 		link: "beach",
 	},
 	{
-		image: "../art/B2.jpg",
+		image: "../Art/B2.jpg",
 		title: "",
 		link: "beach",
 	},
 	{
-		image: "../art/R1.jpg",
+		image: "../Art/R1.jpg",
 		title: "",
 		link: "beach",
 	},
 	{
-		image: "../art/R2.jpg",
+		image: "../Art/R2.jpg",
 		title: "",
 		link: "beach",
 	},
 	{
-		image: "../art/R3.jpg",
+		image: "../Art/R3.jpg",
 		title: "",
 		link: "beach",
 	},
 	{
-		image: "../art/R4.jpg",
+		image: "../Art/R4.jpg",
 		title: "",
 		link: "beach",
 	},
