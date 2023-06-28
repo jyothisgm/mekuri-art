@@ -1,5 +1,5 @@
 import { React } from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { MantineProvider } from "@mantine/core";
 import HeaderSimple from "./components/HeaderSimple";
 import Home from "./components/Home";
@@ -401,18 +401,13 @@ const App = () => {
 						},
 					]}
 				/>
-				{/* <Home /> */}
-				<Switch>
-					<Route exact path='/' component={Home} />
-					<Route exact path='/exhibitions' component={<CardsCarousel data={exhibition_data} />} />
-					<Route exact path='/work' component={<ArtGrid data={work_data} title='Work' />} />
-					<Route
-						exact
-						path='/36daysoftype'
-						component={<ArtGrid data={type_data} title='36 Days of Type' />}
-					/>
-					<Route exact path='/contactme' component={GetInTouchSimple} />
-				</Switch>
+				<Routes>
+					<Route exact path='/' element={<Home />} />
+					<Route exact path='exhibitions' element={<CardsCarousel data={exhibition_data} />} />
+					<Route exact path='work' component={<ArtGrid data={work_data} title='Work' />} />
+					<Route exact path='36daysoftype' element={<ArtGrid data={type_data} title='36 Days of Type' />} />
+					<Route exact path='contactme' component={<GetInTouchSimple />} />
+				</Routes>
 			</MantineProvider>
 		</Router>
 	);
