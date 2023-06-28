@@ -84,7 +84,7 @@ export const GetInTouchSimple = () => {
 				/>
 
 				<Group position='center' mt='xl'>
-					<Button type='submit' size='md'>
+					<Button type='submit' size='md' style={{ "background-color": "#e03131" }}>
 						Send message
 					</Button>
 				</Group>

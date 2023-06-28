@@ -119,7 +119,7 @@ export const Home = () => {
 						<Grid.Col span={6}>
 							<Paper shadow='xs' p='md' height={SECONDARY_COL_HEIGHT} align='center'>
 								<a href='/contactme'>
-									<Button color='red' radius='xs' size='lg'>
+									<Button style={{ "background-color": "#e03131" }} radius='xs' size='lg'>
 										Say Hi
 									</Button>
 								</a>
@@ -134,7 +134,7 @@ export const Home = () => {
 			<ArtGrid data={work_data} title='Work' />
 			<Paper shadow='xs' p='md' height={SECONDARY_COL_HEIGHT} align='center'>
 				<a href='/work'>
-					<Button color='red' radius='xs' size='lg'>
+					<Button style={{ "background-color": "#e03131" }} radius='xs' size='lg'>
 						See More
 					</Button>
 				</a>

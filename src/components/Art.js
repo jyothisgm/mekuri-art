@@ -1,4 +1,5 @@
-import { Card, Text, createStyles, getStylesRef, rem, Grid, Container, Title } from "@mantine/core";
+import { Card, Text, createStyles, getStylesRef, rem, Grid, Container, Title, useMantineTheme } from "@mantine/core";
+import { useMediaQuery } from "@mantine/hooks";
 
 const useStyles = createStyles((theme) => ({
 	card: {
@@ -71,8 +72,10 @@ const ImageCard = ({ image, title, link }) => {
 };
 
 const ArtGrid = ({ data, title }) => {
+	const theme = useMantineTheme();
+	const mobile = useMediaQuery(`(max-width: ${theme.breakpoints.sm})`);
 	const images = data.map((item) => (
-		<Grid.Col key={item.title} span={6} style={{ minHeight: rem(500) }}>
+		<Grid.Col key={item.title} span={mobile ? 12 : 6} style={{ minHeight: rem(500) }}>
 			<ImageCard {...item} />
 		</Grid.Col>
 	));

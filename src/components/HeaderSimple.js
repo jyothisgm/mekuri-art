@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef } from "react";
 import {
 	createStyles,
 	Header,
@@ -27,7 +27,7 @@ const useStyles = createStyles((theme) => ({
 		top: HEADER_HEIGHT,
 		left: 0,
 		right: 0,
-		zIndex: 0,
+		zIndex: 100,
 		borderTopRightRadius: 0,
 		borderTopLeftRadius: 0,
 		borderTopWidth: 0,
@@ -89,30 +89,7 @@ export const HeaderSimple = ({ links }) => {
 	const [opened, { toggle, close }] = useDisclosure(false);
 	const [active, setActive] = useState();
 	const { classes, cx } = useStyles();
-	const [sticky, setSticky] = useState({ isSticky: false, offset: 0 });
 	const headerRef = useRef(null);
-	console.log(window.location.pathname);
-
-	// handle scroll event
-	const handleScroll = (elTopOffset, elHeight) => {
-		if (window.pageYOffset > elTopOffset + elHeight) {
-			setSticky({ isSticky: true, offset: elHeight });
-		} else {
-			setSticky({ isSticky: false, offset: 0 });
-		}
-	};
-	useEffect(() => {
-		var header = headerRef.current.getBoundingClientRect();
-		const handleScrollEvent = () => {
-			handleScroll(header.top, header.height);
-		};
-
-		window.addEventListener("scroll", handleScrollEvent);
-
-		return () => {
-			window.removeEventListener("scroll", handleScrollEvent);
-		};
-	}, []);
 
 	const items = links.map((link) => (
 		<a
@@ -129,17 +106,11 @@ export const HeaderSimple = ({ links }) => {
 	));
 
 	return (
-		<Header
-			height={HEADER_HEIGHT}
-			mb={40}
-			id='sticky-header'
-			className={`navbar${sticky.isSticky ? " sticky" : ""}`}
-			ref={headerRef}
-		>
+		<Header height={HEADER_HEIGHT} mb={40} ref={headerRef}>
 			<Container className={classes.header}>
 				<Flex gap={{ base: "sm" }} justify='flex-start' align='center' direction='row'>
 					<Image height={rem(50)} width={rem(50)} radius='100%' src='./Mekuri.jpeg' alt='Logo' />
-					<Text size='xl' fw={700} color='#d10000'>
+					<Text size='xl' fw={700} color='#e03131'>
 						Mekuri
 					</Text>
 				</Flex>
