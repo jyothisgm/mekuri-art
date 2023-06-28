@@ -403,10 +403,10 @@ const App = () => {
 				/>
 				<Routes>
 					<Route exact path='/' element={<Home />} />
-					<Route exact path='exhibitions' element={<CardsCarousel data={exhibition_data} />} />
-					<Route exact path='work' component={<ArtGrid data={work_data} title='Work' />} />
-					<Route exact path='36daysoftype' element={<ArtGrid data={type_data} title='36 Days of Type' />} />
-					<Route exact path='contactme' component={<GetInTouchSimple />} />
+					<Route exact path='/exhibitions' element={<CardsCarousel data={exhibition_data} />} />
+					<Route exact path='/work' element={<ArtGrid data={work_data} title='Work' />} />
+					<Route exact path='/36daysoftype' element={<ArtGrid data={type_data} title='36 Days of Type' />} />
+					<Route exact path='/contactme' element={<GetInTouchSimple />} />
 				</Routes>
 			</MantineProvider>
 		</Router>
